@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-rx-lite",     "homepage": "https://github.com/npmtest/node-npmtest-rx-lite",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-rx-lite.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [rx-lite (v4.0.8)](https://github.com/Reactive-Extensions/RxJS)  [![npm package](https://img.shields.io/npm/v/npmtest-rx-lite.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-rx-lite) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-rx-lite.svg)](https://travis-ci.org/npmtest/node-npmtest-rx-lite)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-rx-lite",
+    "keywords": [
+        "coverage",
+        "test",
+        "rx-lite"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_rx_lite.js",
+    "name": "npmtest-rx-lite",
+    "nameAlias": "npmtest_rx_lite",
+    "nameOriginal": "npmtest-rx-lite",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-rx-lite.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
